@@ -1,0 +1,17 @@
+manifest_version: "1.0"
+prd_file: "bad_sample.docx"
+modules:
+  - module_name: "4.1 奖励模块 M01"
+    screenshot_file: ""
+    source: "missing"
+    source_ref: ""
+    device_pixel_ratio: 0
+    missing_reason: "Figma 链接 403"
+    owner: ""
+  - module_name: "4.2 多余模块"
+    screenshot_file: "screenshots/多余模块.png"
+    source: "manual_screenshot"
+    source_ref: "bad_fixture_extra"
+    device_pixel_ratio: 2.0
+    missing_reason: ""
+    owner: ""

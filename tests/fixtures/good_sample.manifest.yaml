@@ -1,0 +1,10 @@
+manifest_version: "1.0"
+prd_file: "good_sample.docx"
+modules:
+  - module_name: "4.1 奖励结算模块"
+    screenshot_file: "screenshots/奖励结算模块_v1.png"
+    source: "manual_screenshot"
+    source_ref: "good_sample_fixture"
+    device_pixel_ratio: 2.0
+    missing_reason: ""
+    owner: ""

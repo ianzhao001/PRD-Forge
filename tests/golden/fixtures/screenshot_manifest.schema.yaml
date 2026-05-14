@@ -1,0 +1,62 @@
+# Screenshot manifest schema (descriptive).
+# This file documents the field contract for screenshot_manifest YAML files;
+# validate_prd.py implements C8 against these fields directly. Not a JSON Schema document.
+
+manifest_version:
+  type: string
+  required: true
+  description: Screenshot manifest schema version, for example "1.0".
+
+prd_file:
+  type: string
+  required: true
+  description: Related PRD docx filename. Use filename only, not a local absolute path.
+
+modules:
+  type: array
+  required: true
+  description: One item per PRD chapter 4 business module.
+  items:
+    module_name:
+      type: string
+      required: true
+      description: Chinese business module name. Must exactly match the PRD chapter 4 module heading.
+    screenshot_file:
+      type: string
+      required: true
+      description: Relative screenshot path, for example screenshots/奖励结算模块_v2.png. Empty string when source is missing.
+    source:
+      type: enum
+      required: true
+      values:
+        - figma_url
+        - html_dom
+        - static_image
+        - manual_screenshot
+        - missing
+      description: Screenshot source type.
+    source_ref:
+      type: string
+      required: true
+      description: Figma URL, HTML selector/node id, static source filename, or empty string when source is missing.
+    device_pixel_ratio:
+      type: number
+      required: true
+      minimum: 2.0
+      missing_value: 0
+      description: Capture DPR. Must be >= 2.0 unless source is missing, in which case use 0.
+    missing_reason:
+      type: string
+      required: false
+      required_when:
+        source: missing
+      description: Required when source is missing; otherwise use an empty string.
+    owner:
+      type: string
+      required: false
+      required_when:
+        source: missing
+      pattern_when:
+        source: missing
+        pattern: "^@[^()]+\\([^)]+\\)$"
+      description: Missing-module owner in @花名(id) format; empty string when source is not missing.

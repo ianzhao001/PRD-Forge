@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "meta": {
+    "path": "",
+    "strict": true,
+    "paragraphs": 14,
+    "tables": 5,
+    "images": 1,
+    "issues": 0,
+    "errors": 0,
+    "warnings": 0,
+    "manifest": ""
+  },
+  "issues": []
+}

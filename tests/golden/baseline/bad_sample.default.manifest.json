@@ -1,0 +1,121 @@
+{
+  "status": "fail",
+  "meta": {
+    "path": "",
+    "strict": false,
+    "paragraphs": 6,
+    "tables": 3,
+    "images": 0,
+    "issues": 15,
+    "errors": 12,
+    "warnings": 3,
+    "manifest": ""
+  },
+  "issues": [
+    {
+      "check_id": "C1",
+      "level": "error",
+      "location": "paragraph 2",
+      "matched": "本文由 AI",
+      "suggestion": "删除生成来源痕迹。"
+    },
+    {
+      "check_id": "C1",
+      "level": "error",
+      "location": "paragraph 2",
+      "matched": "/Users/",
+      "suggestion": "删除本地路径或工程目录，只保留文件名、版本号或线上链接。"
+    },
+    {
+      "check_id": "C1",
+      "level": "error",
+      "location": "paragraph 5",
+      "matched": "M01",
+      "suggestion": "删除内部编号，改为中文业务名。"
+    },
+    {
+      "check_id": "C1",
+      "level": "error",
+      "location": "table 2 r2c1 p1",
+      "matched": "screen8",
+      "suggestion": "删除内部编号，改为中文业务名。"
+    },
+    {
+      "check_id": "C2",
+      "level": "error",
+      "location": "paragraph 1",
+      "matched": "1. 修订记录 (style=Normal)",
+      "suggestion": "编号正文标题必须使用 Word Heading 1-5，不能用 Normal 加粗伪装。"
+    },
+    {
+      "check_id": "C3",
+      "level": "error",
+      "location": "table 2 r3c3",
+      "matched": "w:br",
+      "suggestion": "单元格内含真实换行符，请拆为多个段落。"
+    },
+    {
+      "check_id": "C3",
+      "level": "error",
+      "location": "table 2 r3c3 p1",
+      "matched": "<br>",
+      "suggestion": "单元格内请拆成多个段落，不要写入换行字面量或 HTML 换行标签。"
+    },
+    {
+      "check_id": "C3",
+      "level": "error",
+      "location": "table 2 r3c3 p1",
+      "matched": "\\n",
+      "suggestion": "单元格内请拆成多个段落，不要写入换行字面量或 HTML 换行标签。"
+    },
+    {
+      "check_id": "C4",
+      "level": "error",
+      "location": "document",
+      "matched": "0 images",
+      "suggestion": "PRD 至少应嵌入真实截图，或在展示列标注待设计补图。"
+    },
+    {
+      "check_id": "C4",
+      "level": "error",
+      "location": "table 2 r2c2",
+      "matched": "奖励模块 screen8",
+      "suggestion": "功能模块展示列必须包含真实图片，或明确写待设计补图。"
+    },
+    {
+      "check_id": "C5",
+      "level": "warn",
+      "location": "section 4 -> section 5",
+      "matched": "管理端可配置=2, 配置项行=0",
+      "suggestion": "功能详情中的管理端可配置字段必须在管理端需求中有对应配置项。"
+    },
+    {
+      "check_id": "C7",
+      "level": "warn",
+      "location": "table 2 r3",
+      "matched": "兜底模块",
+      "suggestion": "展示列待设计补图必须在确认事项表登记对应模块、缺失原因和负责人；建议在确认事项表的模块列写明完整中文模块名以便交叉定位。"
+    },
+    {
+      "check_id": "C8",
+      "level": "error",
+      "location": "manifest.modules",
+      "matched": "PRD缺manifest=[]; manifest多余=['4.2 多余模块']",
+      "suggestion": "manifest module_name 集合必须与 PRD 第 4 章二级模块标题严格相等。"
+    },
+    {
+      "check_id": "C8",
+      "level": "error",
+      "location": "manifest.modules.source",
+      "matched": "['4.1 奖励模块 M01', '兜底模块']",
+      "suggestion": "source == missing 的模块必须与 PRD 展示列待设计补图双向一致。"
+    },
+    {
+      "check_id": "C8",
+      "level": "warn",
+      "location": "manifest.modules[1] 4.1 奖励模块 M01",
+      "matched": "missing_reason='Figma 链接 403', owner=''",
+      "suggestion": "source == missing 时 missing_reason 和 owner 必填。"
+    }
+  ]
+}
